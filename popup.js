@@ -1,0 +1,1 @@
+// Extension page JS things might come in future here

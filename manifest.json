@@ -1,0 +1,30 @@
+{
+    "name": "Leetcode Custom Themes",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "description": "A browser extension which helps to change leetcode code editor theme",
+    "icons": {
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "author": "Vishnuvardhan S",
+    "homepage_url": "https://github.com/coderrag/leetcode-custom-themes",
+    "action": {
+        "default_icon": "icons/icon32.png",
+        "default_popup": "popup.html",
+        "default_title": "Leetcode Custom Themes"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "storage",
+        "scripting",
+        "tabs"
+    ],
+    "host_permissions": [
+        "https://leetcode.com/**"
+    ]
+}

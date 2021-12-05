@@ -79,7 +79,7 @@ def getStyleName(link):
 
 
 def generateStyles():
-    f = open('../styles.js', 'a')
+    f = open('../worker/styles.js', 'a')
     for link in links:
         print('Requesting ', link)
         stylename = getStyleName(link)
@@ -90,7 +90,7 @@ def generateStyles():
 
 
 def generateJSON():
-    f = open('../styles.js', 'a')
+    f = open('../worker/styles.js', 'a')
     s = 'var styles = {'
     for link in links:
         key = 'cm-s-' + link.split('/')[-1].split('.')[0]
@@ -103,7 +103,7 @@ def generateJSON():
 
 # to clean out the file
 print('Cleaning styles.js')
-t = open('../styles.js', 'w')
+t = open('../worker/styles.js', 'w')
 
 generateStyles()
 generateJSON()

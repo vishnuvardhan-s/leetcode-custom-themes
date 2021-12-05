@@ -1,0 +1,14 @@
+{
+  "name": "leetcode-custom-themes",
+  "version": "1.0.0",
+  "description": "Leetcode Custom Themes for Code Editor",
+  "scripts": {
+    "build": "npm run clean && copyfiles ./manifest.json ./popup.html ./popup.js ./script.js icons/** worker/** extension",
+    "clean": "rm -rf extension"
+  },
+  "author": "Vishnuvardhan S",
+  "license": "ISC",
+  "dependencies": {
+    "copyfiles": "^2.4.1"
+  }
+}

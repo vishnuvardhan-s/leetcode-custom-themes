@@ -1,4 +1,7 @@
 function format(codeTheme) {
+    if (codeTheme === undefined) {
+        return "No"
+    }
     const list = codeTheme.split('-').slice(2)
     const themeName = list.map((item) => item[0].toUpperCase() + item.slice(1))
     return themeName.join(' ')

@@ -1,3 +1,5 @@
+
+
 function format(codeTheme) {
     if (codeTheme === undefined) {
         return "No"
@@ -22,5 +24,22 @@ document.getElementById("theme").addEventListener("change", function () {
     })
 });
 
+function displayProperMessage() {
+    const h4 = document.getElementById("selectedTheme")
+    h4.innerHTML = 'Please visit leetcode to change theme'
+    const select = document.getElementById("theme")
+    select.remove()
+}
 
-displayTheme()
+function checkForWebPage() {
+    chrome.tabs.query({ active: true, currentWindow: true }, ([tabId]) => {
+        if (tabId.url.startsWith("https://leetcode.com")) {
+            displayTheme()
+        }
+        else {
+            displayProperMessage()
+        }
+    })
+}
+
+checkForWebPage()

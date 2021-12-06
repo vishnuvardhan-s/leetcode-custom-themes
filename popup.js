@@ -1,6 +1,23 @@
+function format(codeTheme) {
+    const list = codeTheme.split('-').slice(2)
+    const themeName = list.map((item) => item[0].toUpperCase() + item.slice(1))
+    return themeName.join(' ')
+}
+
+function displayTheme() {
+    chrome.storage.sync.get('codeTheme', (response) => {
+        const h4 = document.getElementById("selectedTheme")
+        h4.innerHTML = `${format(response.codeTheme)} theme is set!`
+    })
+}
+
 document.getElementById("theme").addEventListener("change", function () {
     const selectedTheme = document.getElementById("theme").value;
     chrome.storage.sync.set({ 'codeTheme': selectedTheme }, () => {
         console.log(`${selectedTheme} theme is set!`)
+        displayTheme()
     })
 });
+
+
+displayTheme()

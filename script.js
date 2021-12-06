@@ -6,7 +6,6 @@ function setCustomCSS(theme) {
         head.appendChild(styleTag);
         styleTag.type = 'text/css';
         styleTag.appendChild(document.createTextNode(css));
-        console.log("Custom theme set!")
     })
 }
 
@@ -30,10 +29,27 @@ function waitForElm(selector) {
     });
 }
 
+// if any error in extension, check here first
+// this is the part where the code is dependent on leetcode page render
 waitForElm('.react-codemirror2').then((element) => {
     const child = element.firstChild
     const theme = child.classList[1]
-    setCustomCSS("cm-s-elegant")
-    child.classList.remove(theme)
-    child.classList.add("cm-s-elegant")
+    // default theme is set to textmate
+    chrome.storage.sync.get('codeTheme', function (response) {
+        const codeTheme = response.codeTheme
+        if (codeTheme === undefined) {
+            chrome.storage.sync.set({
+                'codeTheme': 'cm-s-textmate'
+            }, () => {
+                setCustomCSS(codeTheme)
+                child.classList.remove(theme)
+                child.classList.add(codeTheme)
+            })
+        }
+        else {
+            setCustomCSS(codeTheme)
+            child.classList.remove(theme)
+            child.classList.add(codeTheme)
+        }
+    });
 })

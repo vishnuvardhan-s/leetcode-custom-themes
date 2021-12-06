@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Leetcode Custom Themes for Code Editor",
   "scripts": {
-    "build": "npm run clean && copyfiles ./manifest.json ./popup.html ./popup.js ./script.js icons/** worker/** extension",
+    "build": "npm run clean && copyfiles manifest.json /*.js /*.html icons/** extension",
     "clean": "rm -rf extension"
   },
   "author": "Vishnuvardhan S",

@@ -3497,6 +3497,34 @@ var zenburn = `/**
 .cm-s-zenburn div.CodeMirror-selected { background: #545454; }
 .cm-s-zenburn .CodeMirror-focused div.CodeMirror-selected { background: #4f4f4f; }
 `
+
+// took css from leetcode
+var textmate = `
+.cm-s-textmate.CodeMirror { color: #000000; background: #FFFFFF; }
+.cm-s-textmate span.cm-meta {color: rgb(7, 32, 170);}
+.cm-s-textmate span.cm-keyword { color: rgb(16, 51, 246); }
+.cm-s-textmate span.cm-atom {color: rgb(88, 92, 246);}
+.cm-s-textmate span.cm-number {color: rgb(11, 41, 206);}
+.cm-s-textmate span.cm-def {color: rgb(16, 51, 246);}
+.cm-s-textmate span.cm-variable {color: black;}
+.cm-s-textmate span.cm-variable-2 {color: rgb(85, 148, 164);}
+.cm-s-textmate span.cm-variable-3 {color: rgb(16, 51, 246);}
+.cm-s-textmate span.cm-property {color: black;}
+.cm-s-textmate span.cm-operator {color: rgb(16, 51, 246);}
+.cm-s-textmate span.cm-comment {color: rgb(51, 126, 247);}
+.cm-s-textmate span.cm-string {color: rgb(49, 120, 33);}
+.cm-s-textmate span.cm-string-2 {color: rgb(193, 52, 32);}
+.cm-s-textmate span.cm-error {color: #F00;}
+.cm-s-textmate span.cm-qualifier {color: #555;}
+.cm-s-textmate span.cm-builtin {color: rgb(109, 119, 240);}
+.cm-s-textmate span.cm-bracket {color: #cc7;}
+.cm-s-textmate span.cm-tag {color: rgb(16, 51, 246);}
+.cm-s-textmate span.cm-attribute {color: #036A07;}
+
+.cm-s-textmate .CodeMirror-activeline-background {background: #e8f2ff !important;}
+.cm-s-textmate .CodeMirror-matchhighlight { background: #e9e9e9 }
+.cm-s-textmate div.CodeMirror-selected { background: rgb(208, 227, 253); }
+`
 var styles = {
   "cm-s-3024-day": _3024_day,
   "cm-s-3024-night": _3024_night,
@@ -3552,6 +3580,7 @@ var styles = {
   "cm-s-shadowfox": shadowfox,
   "cm-s-solarized": solarized,
   "cm-s-ssms": ssms,
+  "cm-s-textmate": textmate,
   "cm-s-the-matrix": the_matrix,
   "cm-s-tomorrow-night-bright": tomorrow_night_bright,
   "cm-s-tomorrow-night-eighties": tomorrow_night_eighties,

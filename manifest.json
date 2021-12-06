@@ -17,7 +17,7 @@
         "default_title": "Leetcode Custom Themes"
     },
     "background": {
-        "service_worker": "worker/background.js"
+        "service_worker": "background.js"
     },
     "permissions": [
         "storage",

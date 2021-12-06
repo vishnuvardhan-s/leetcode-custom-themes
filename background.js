@@ -16,4 +16,19 @@ chrome.runtime.onMessage.addListener(
             sendResponse({ style: self.styles[request.theme] })
         }
     }
-);
+)
+
+chrome.storage.onChanged.addListener((changes, namespace) => {
+    console.log("changes")
+    chrome.tabs.query({ active: true, currentWindow: true }, ([tabId]) => {
+        console.log(tabId)
+        if (tabId.url.startsWith("https://leetcode.com")) {
+            chrome.scripting.executeScript({
+                target: { tabId: tabId.id },
+                files: ['script.js']
+            }, () => {
+                console.log("Script callback")
+            })
+        }
+    })
+})

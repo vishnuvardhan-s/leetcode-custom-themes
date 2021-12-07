@@ -1,8 +1,6 @@
 # Leetcode Custom Themes
 ## A Chrome extension for customizing the leetcode code editor
-
 ### Build extension
-
 `npm run build`
 
 ### Load extension
@@ -12,13 +10,15 @@
 4. Select the folder named <b>extension</b> 
 5. That's it, you can start using the extension 
 
+### For developement
+`Use the leetcode-custom-themes directly`
 ### Tracking
 
 * Basic functionality is done
 * Most of the themes are taken from https://codemirror.net/theme/
-* Yet to do:    
+* Yet to do:   
     * User can also set custom themes
-    * What if user changes theme inside leetcode?
+    * What if user changes theme inside leetcode? - IDEA IS TO CHECK FOR THEME CHANGES INSIDE LEETCODE, IF THE LIST IS CLICKED, THEN I HAVE TO NULL THE CHROME STORAGE - ALSO, HAVE TO CHANGE THE DEFAULT THEME LOGIC, IF NULL, DO NOTHING
     * Upload to Chrome Web Store
 * Have to check
     * Set the themes only once ('loading', 'complete')
@@ -31,3 +31,4 @@
     * Current theme should be visible in the extension page - SHOWN ABOVE SELECT LIST
     * Is it affecting other areas - ONLY CHANGING IF PAGE IS PROBLEMS OR PLAYGROUND
     * Extension page, BASIC DONE
+    * Contest, Assessment, Explore page support - DONE

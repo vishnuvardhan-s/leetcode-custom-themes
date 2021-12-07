@@ -39,7 +39,7 @@ chrome.runtime.sendMessage({ page: 'whatpage' }, (response) => {
         waitForElm(className).then((element) => {
             const child = (currPage === 'problems' || currPage === 'assessment') ? element.children[0] : element.children[1]
             const array = [...child.classList]
-            const theme = array.filter(classes => classes.startsWith("cm-s-"));
+            const theme = array.filter(classes => classes.startsWith("cm-s-"))
             // default theme is set to textmate
             chrome.storage.sync.get('codeTheme', function (response) {
                 const codeTheme = response.codeTheme

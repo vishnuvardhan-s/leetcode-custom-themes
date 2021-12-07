@@ -17,12 +17,12 @@ function displayTheme() {
 }
 
 document.getElementById("theme").addEventListener("change", function () {
-    const selectedTheme = document.getElementById("theme").value;
+    const selectedTheme = document.getElementById("theme").value
     chrome.storage.sync.set({ 'codeTheme': selectedTheme }, () => {
         console.log(`${selectedTheme} theme is set!`)
         displayTheme()
     })
-});
+})
 
 function displayProperMessage() {
     const h4 = document.getElementById("selectedTheme")

@@ -33,10 +33,11 @@ function waitForElm(selector) {
 // this is the part where the code is dependent on leetcode page render
 chrome.runtime.sendMessage({ page: 'whatpage' }, (response) => {
     const currPage = response.currPage
-    if (currPage === 'problems' || currPage === 'playground') {
-        const className = currPage === 'problems' ? '.react-codemirror2' : '.ReactCodeMirror'
+    const supportedPages = ['problems', 'playground', 'assessment', 'contest', 'explore']
+    if (supportedPages.indexOf(currPage) > -1) {
+        const className = (currPage === 'problems' || currPage === 'assessment') ? '.react-codemirror2' : '.ReactCodeMirror'
         waitForElm(className).then((element) => {
-            const child = currPage === 'problems' ? element.children[0] : element.children[1]
+            const child = (currPage === 'problems' || currPage === 'assessment') ? element.children[0] : element.children[1]
             const array = [...child.classList]
             const theme = array.filter(classes => classes.startsWith("cm-s-"));
             // default theme is set to textmate
@@ -47,7 +48,9 @@ chrome.runtime.sendMessage({ page: 'whatpage' }, (response) => {
                         'codeTheme': 'cm-s-textmate'
                     }, () => {
                         setCustomCSS(codeTheme)
-                        child.classList.remove(theme[0])
+                        for (t of theme) {
+                            child.classList.remove(t)
+                        }
                         child.classList.add(codeTheme)
                         // just in case if  the below classes are removed
                         if (child.classList.index('CodeMirror') == -1) {
@@ -60,7 +63,9 @@ chrome.runtime.sendMessage({ page: 'whatpage' }, (response) => {
                 }
                 else {
                     setCustomCSS(codeTheme)
-                    child.classList.remove(theme[0])
+                    for (t of theme) {
+                        child.classList.remove(t)
+                    }
                     child.classList.add(codeTheme)
                     // just in case if  the below classes are removed
                     if (child.classList.index('CodeMirror') === -1) {

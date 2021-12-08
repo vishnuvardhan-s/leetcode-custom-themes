@@ -23,7 +23,6 @@
 * Basic functionality is done
 * Most of the themes are taken from https://codemirror.net/theme/
 * Yet to do:   
-    * Atleast okayish looking UI - DOING
     * User can also set custom themes - maybe in an update v2.0.0
     * leetcode-cn support
     * Upload to Chrome Web Store
@@ -41,3 +40,4 @@
     * Contest, Assessment, Explore page support - DONE
     * What if user changes theme inside leetcode? - IDEA IS TO CHECK FOR THEME CHANGES INSIDE LEETCODE, IF THE LIST IS CLICKED, THEN I HAVE TO NULL THE CHROME STORAGE - ALSO, HAVE TO CHANGE THE DEFAULT THEME LOGIC, IF NULL, DO NOTHING - DONE
     * Remove textmate after implementing 2 - DONE
+    * Atleast okayish looking UI - DONE

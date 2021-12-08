@@ -1,5 +1,5 @@
 function format(codeTheme) {
-    if (codeTheme === null) {
+    if (codeTheme === null || codeTheme === undefined) {
         return "No"
     }
     const list = codeTheme.split('-').slice(2)

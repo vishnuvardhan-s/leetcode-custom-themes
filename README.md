@@ -1,17 +1,23 @@
 # Leetcode Custom Themes
 ## A Chrome extension for customizing the leetcode code editor
-### Build extension
-`npm run build`
 
-### Load extension
+<hr>
+
+### For normal users
+0. `npm run build` after cloning (Windows users can use git-bash)
 1. Visit chrome://extensions
 2. Turn on Developer mode
 3. Click on Load Unpacked 
 4. Select the folder named <b>extension</b> 
 5. That's it, you can start using the extension 
 
+<hr>
+
 ### For developement
-`Use the leetcode-custom-themes directly`
+`Use the leetcode-custom-themes folder directly`
+
+<hr>
+
 ### Tracking
 
 * Basic functionality is done

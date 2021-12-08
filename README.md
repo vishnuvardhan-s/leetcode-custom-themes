@@ -5,7 +5,7 @@
 
 ### For normal users
 0. `npm run build` after cloning (Windows users can use git-bash)
-1. Visit chrome://extensions
+1. Visit `chrome://extensions` or `edge://extensions` depending upon your browser
 2. Turn on Developer mode
 3. Click on Load Unpacked 
 4. Select the folder named <b>extension</b> 

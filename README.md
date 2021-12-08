@@ -17,8 +17,9 @@
 * Basic functionality is done
 * Most of the themes are taken from https://codemirror.net/theme/
 * Yet to do:   
-    * User can also set custom themes
-    * What if user changes theme inside leetcode? - IDEA IS TO CHECK FOR THEME CHANGES INSIDE LEETCODE, IF THE LIST IS CLICKED, THEN I HAVE TO NULL THE CHROME STORAGE - ALSO, HAVE TO CHANGE THE DEFAULT THEME LOGIC, IF NULL, DO NOTHING
+    * User can also set custom themes - maybe in an update v2.0.0
+    * leetcode-cn support
+    * Remove textmate after implementing 2
     * Upload to Chrome Web Store
 * Have to check
     * Set the themes only once ('loading', 'complete')
@@ -30,5 +31,6 @@
     * What to show if the user opens extension in a non-leetcode page? - BASIC INSTRUCTION IS SHOWN
     * Current theme should be visible in the extension page - SHOWN ABOVE SELECT LIST
     * Is it affecting other areas - ONLY CHANGING IF PAGE IS PROBLEMS OR PLAYGROUND
-    * Extension page, BASIC DONE
+    * Extension page, BASIC DONE - UI Pending
     * Contest, Assessment, Explore page support - DONE
+    * What if user changes theme inside leetcode? - IDEA IS TO CHECK FOR THEME CHANGES INSIDE LEETCODE, IF THE LIST IS CLICKED, THEN I HAVE TO NULL THE CHROME STORAGE - ALSO, HAVE TO CHANGE THE DEFAULT THEME LOGIC, IF NULL, DO NOTHING - DONE

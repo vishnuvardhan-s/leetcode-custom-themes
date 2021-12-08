@@ -12,7 +12,7 @@ function format(codeTheme) {
 function displayTheme() {
     chrome.storage.sync.get('codeTheme', (response) => {
         const h4 = document.getElementById("selectedTheme")
-        h4.innerHTML = `${format(response.codeTheme)} theme is set!`
+        h4.innerHTML = `${format(response.codeTheme)} theme is currently set!`
     })
 }
 

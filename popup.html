@@ -6,14 +6,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leetcode Custom Themes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: grid;
+            place-items: center;
+            min-width: 300px;
+            font-family: 'PT Sans', sans-serif;
+            background-color: #e9c46a;
+        }
+
+        select {
+            font-size: 1rem;
+            padding: .45em 6em .45em 1.5em;
+            background: #edf2f4;
+            /* background: #fdfcdc; */
+            color: black;
+            border: 0;
+            appearance: none;
+            font-family: 'PT Sans', sans-serif;
+        }
+
+        .custom-select {
+            position: relative;
+        }
+
+        .custom-arrow {
+            position: absolute;
+            display: block;
+            top: 0;
+            right: 0;
+            background: #6b6969f3;
+            height: 100%;
+            width: 3em;
+            pointer-events: none;
+        }
+
+        .custom-arrow::before,
+        .custom-arrow::after {
+            --size: .65em;
+            --color: white;
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .custom-arrow::before {
+            border-left: var(--size) solid transparent;
+            border-right: var(--size) solid transparent;
+            border-bottom: var(--size) solid var(--color);
+            top: 35%;
+        }
+
+        .custom-arrow::after {
+            border-left: var(--size) solid transparent;
+            border-right: var(--size) solid transparent;
+            border-top: var(--size) solid var(--color);
+            top: 70%;
+        }
+
+        h3 {
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="box">
-        <h4 id="selectedTheme"></h4>
+    <h3><b>LEETCODE CUSTOM THEMES</b></h3>
+    <h4 id="selectedTheme"></h4>
+    <div class="box custom-select">
         <select id="theme">
             <option selected disabled>Choose Theme</option>
-            <option value="cm-s-3024-day">3024 Day</option>
+            <option value=" cm-s-3024-day">3024 Day</option>
             <option value="cm-s-3024-night">3024 Night</option>
             <option value="cm-s-abbott">Abbott</option>
             <option value="cm-s-abcdef">Abcdef</option>
@@ -80,6 +149,7 @@
             <option value="cm-s-yonce">Yonce</option>
             <option value="cm-s-zenburn">Zenburn</option>
         </select>
+        <span class="custom-arrow"></span>
     </div>
 </body>
 

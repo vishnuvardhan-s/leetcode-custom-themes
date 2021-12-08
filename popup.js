@@ -1,5 +1,3 @@
-
-
 function format(codeTheme) {
     if (codeTheme === null) {
         return "No"
@@ -28,6 +26,8 @@ function displayProperMessage() {
     const h4 = document.getElementById("selectedTheme")
     h4.innerHTML = 'Please visit leetcode to change theme'
     const select = document.getElementById("theme")
+    const arrow = document.getElementsByClassName("custom-arrow")[0]
+    arrow.style.display = "none"
     select.remove()
 }
 

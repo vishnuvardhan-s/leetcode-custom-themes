@@ -3,6 +3,9 @@
 
 <hr>
 
+### Available in Chrome Web Store
+https://chrome.google.com/webstore/detail/leetcode-custom-themes/nkbhfhhjppjiflcboogbiahjlknaehhl/
+
 ### For normal users
 0. `npm run build` after cloning (Windows users can use git-bash)
 1. Visit `chrome://extensions` or `edge://extensions` depending upon your browser

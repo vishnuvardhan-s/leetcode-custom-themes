@@ -10,5 +10,14 @@ https://chrome.google.com/webstore/detail/leetcode-custom-themes/nkbhfhhjppjiflc
 
 <hr>
 
-### Wiki page
-https://github.com/coderrag/leetcode-custom-themes/wiki/
+Demo: https://youtu.be/XJA-xmDRIwk
+
+<hr>
+
+Quick look
+
+![image](https://user-images.githubusercontent.com/45058522/189153960-6f3e1723-b4e0-4638-8aea-647071d75136.png)
+
+<br>
+
+![image](https://user-images.githubusercontent.com/45058522/189154032-1a9569cb-563b-44a9-a928-76c626f67fed.png)

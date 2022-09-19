@@ -1,6 +1,6 @@
 {
     "name": "Leetcode Custom Themes",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "manifest_version": 3,
     "description": "Allows you to change Leetcode Code Editor Themes",
     "icons": {
@@ -10,7 +10,7 @@
         "128": "icons/icon128.png"
     },
     "author": "Vishnuvardhan S",
-    "homepage_url": "https://github.com/coderrag/leetcode-custom-themes",
+    "homepage_url": "https://github.com/vishnuvardhan-s/leetcode-custom-themes",
     "action": {
         "default_icon": "icons/icon32.png",
         "default_popup": "popup.html",
@@ -19,12 +19,6 @@
     "background": {
         "service_worker": "background.js"
     },
-    "permissions": [
-        "storage",
-        "scripting",
-        "tabs"
-    ],
-    "host_permissions": [
-        "https://leetcode.com/**"
-    ]
+    "permissions": ["storage", "scripting", "tabs"],
+    "host_permissions": ["https://leetcode.com/**"]
 }

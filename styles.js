@@ -1003,6 +1003,48 @@ var erlang_dark = `.cm-s-erlang-dark.CodeMirror { background: #002240; color: wh
 .cm-s-erlang-dark .CodeMirror-activeline-background { background: #013461; }
 .cm-s-erlang-dark .CodeMirror-matchingbracket { outline:1px solid grey; color:white !important; }
 `;
+var google_doc_light = `/*
+
+    Name:       google-doc-light
+    Author:     Edmund Leibert III (https://github.com/edmund-leibert)
+
+    CodeMirror template by Jan T. Sott (https://github.com/idleberg/base16-codemirror)
+    Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
+
+*/
+
+.cm-s-3024-day.CodeMirror { background: #f7f7f7; color: black; }
+.cm-s-3024-day div.CodeMirror-selected { background: #d6d5d4; }
+
+.cm-s-3024-day .CodeMirror-line::selection, .cm-s-3024-day .CodeMirror-line > span::selection, .cm-s-3024-day .CodeMirror-line > span > span::selection { background: #d6d5d4; }
+.cm-s-3024-day .CodeMirror-line::-moz-selection, .cm-s-3024-day .CodeMirror-line > span::-moz-selection, .cm-s-3024-day .CodeMirror-line > span > span::selection { background: #d9d9d9; }
+
+.cm-s-3024-day .CodeMirror-gutters { background: #f7f7f7; border-right: 0px; }
+.cm-s-3024-day .CodeMirror-guttermarker { color: black; }
+.cm-s-3024-day .CodeMirror-guttermarker-subtle { color: black; }
+.cm-s-3024-day .CodeMirror-linenumber { color: #807d7c; }
+
+.cm-s-3024-day .CodeMirror-cursor { border-left: 1px solid #5c5855; }
+
+.cm-s-3024-day span.cm-comment { color: black; }
+.cm-s-3024-day span.cm-atom { color: black; }
+.cm-s-3024-day span.cm-number { color: black; }
+
+.cm-s-3024-day span.cm-property, .cm-s-3024-day span.cm-attribute { color: black; }
+.cm-s-3024-day span.cm-keyword { color: black; }
+.cm-s-3024-day span.cm-string { color: black; }
+
+.cm-s-3024-day span.cm-variable { color: black; }
+.cm-s-3024-day span.cm-variable-2 { color: black; }
+.cm-s-3024-day span.cm-def { color: black; }
+.cm-s-3024-day span.cm-bracket { color: black; }
+.cm-s-3024-day span.cm-tag { color: black; }
+.cm-s-3024-day span.cm-link { color: black; }
+.cm-s-3024-day span.cm-error { background: #db2d20; color: black; }
+
+.cm-s-3024-day .CodeMirror-activeline-background { background: #e8f2ff; }
+.cm-s-3024-day .CodeMirror-matchingbracket { text-decoration: underline; color: black !important; }
+`;
 var gruvbox_dark = `/*
 
     Name:       gruvbox-dark
@@ -3725,6 +3767,7 @@ var styles = {
     "cm-s-eclipse": eclipse,
     "cm-s-elegant": elegant,
     "cm-s-erlang-dark": erlang_dark,
+    "cm-s-google-doc-light": google_doc_light,
     "cm-s-gruvbox-dark": gruvbox_dark,
     "cm-s-hopscotch": hopscotch,
     "cm-s-icecoder": icecoder,

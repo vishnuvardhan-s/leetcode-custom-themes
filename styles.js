@@ -7,11 +7,11 @@ var google_interview_day = `/*
     Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
 */
 
-.cm-s-google-interview-day.CodeMirror { background: red; color: black; }
-.cm-s-google-interview-day div.CodeMirror-selected { background: blue; }
+.cm-s-google-interview-day.CodeMirror { background: #f7f7f7; color: black; }
+.cm-s-google-interview-day div.CodeMirror-selected { background: #33CCFF; }
 
-.cm-s-google-interview-day .CodeMirror-line::selection, .cm-s-3024-day .CodeMirror-line > span::selection, .cm-s-3024-day .CodeMirror-line > span > span::selection { background: #d6d5d4; }
-.cm-s-google-interview-day .CodeMirror-line::-moz-selection, .cm-s-3024-day .CodeMirror-line > span::-moz-selection, .cm-s-3024-day .CodeMirror-line > span > span::selection { background: #d9d9d9; }
+.cm-s-google-interview-day .CodeMirror-line::selection, .cm-s-google-interview-day .CodeMirror-line > span::selection, .cm-s-google-interview-day .CodeMirror-line > span > span::selection { background: #d6d5d4; }
+.cm-s-google-interview-day .CodeMirror-line::-moz-selection, .cm-s-google-interview-day .CodeMirror-line > span::-moz-selection, .cm-s-google-interview-day .CodeMirror-line > span > span::selection { background: #d9d9d9; }
 
 .cm-s-google-interview-day .CodeMirror-gutters { background: #f7f7f7; border-right: 0px; }
 .cm-s-google-interview-day .CodeMirror-guttermarker { color: black; }
@@ -24,7 +24,7 @@ var google_interview_day = `/*
 .cm-s-google-interview-day span.cm-atom { color: black; }
 .cm-s-google-interview-day span.cm-number { color: black; }
 
-.cm-s-google-interview-day span.cm-property, .cm-s-3024-day span.cm-attribute { color: black; }
+.cm-s-google-interview-day span.cm-property, .cm-s-google-interview-day span.cm-attribute { color: black; }
 .cm-s-google-interview-day span.cm-keyword { color: black; }
 .cm-s-google-interview-day span.cm-string { color: black; }
 
@@ -3745,6 +3745,7 @@ var zenburn = `/**
 `;
 
 var styles = {
+    "cm-s-google-interview-day": google_interview_day,
     "cm-s-3024-day": _3024_day,
     "cm-s-3024-night": _3024_night,
     "cm-s-abbott": abbott,
@@ -3766,7 +3767,6 @@ var styles = {
     "cm-s-eclipse": eclipse,
     "cm-s-elegant": elegant,
     "cm-s-erlang-dark": erlang_dark,
-    "cm-s-google-interview-day": google_interview_day,
     "cm-s-gruvbox-dark": gruvbox_dark,
     "cm-s-hopscotch": hopscotch,
     "cm-s-icecoder": icecoder,

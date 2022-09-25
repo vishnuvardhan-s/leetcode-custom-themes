@@ -1,6 +1,6 @@
 var google_interview_day = `/*
 
-    Name:       google-interview-day
+    Name:       Google Interview Day
     Author:     Edmund Leibert III (https://github.com/edmund-leibert)
 
     CodeMirror template by Jan T. Sott (https://github.com/idleberg/base16-codemirror)
@@ -38,6 +38,46 @@ var google_interview_day = `/*
 
 .cm-s-google-interview-day .CodeMirror-activeline-background { background: #e8f2ff; }
 .cm-s-google-interview-day .CodeMirror-matchingbracket { text-decoration: underline; color: black !important; }
+`;
+var google_interview_night = `/*
+
+    Name:       Google Interview Night
+    Author:     Jan T. Sott (http://github.com/idleberg)
+
+    CodeMirror template by Jan T. Sott (https://github.com/idleberg/base16-codemirror)
+    Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
+
+*/
+
+  .cm-s-google-interview-night.CodeMirror { background: #090300; color: white; }
+  .cm-s-google-interview-night div.CodeMirror-selected { background: #3a3432; }
+  .cm-s-google-interview-night .CodeMirror-line::selection, .cm-s-google-interview-night .CodeMirror-line > span::selection, .cm-s-google-interview-night .CodeMirror-line > span > span::selection { background: rgba(58, 52, 50, .99); }
+  .cm-s-google-interview-night .CodeMirror-line::-moz-selection, .cm-s-google-interview-night .CodeMirror-line > span::-moz-selection, .cm-s-google-interview-night .CodeMirror-line > span > span::-moz-selection { background: rgba(58, 52, 50, .99); }
+  .cm-s-google-interview-night .CodeMirror-gutters { background: #090300; border-right: 0px; }
+  .cm-s-google-interview-night .CodeMirror-guttermarker { color: #db2d20; }
+  .cm-s-google-interview-night .CodeMirror-guttermarker-subtle { color: #5c5855; }
+  .cm-s-google-interview-night .CodeMirror-linenumber { color: #5c5855; }
+  
+  .cm-s-google-interview-night .CodeMirror-cursor { border-left: 1px solid #807d7c; }
+  
+  .cm-s-google-interview-night span.cm-comment { color: white; }
+  .cm-s-google-interview-night span.cm-atom { color: white; }
+  .cm-s-google-interview-night span.cm-number { color: white; }
+  
+  .cm-s-google-interview-night span.cm-property, .cm-s-google-interview-night span.cm-attribute { color: white; }
+  .cm-s-google-interview-night span.cm-keyword { color: white; }
+  .cm-s-google-interview-night span.cm-string { color: white; }
+  
+  .cm-s-google-interview-night span.cm-variable { color: white; }
+  .cm-s-google-interview-night span.cm-variable-2 { color: white; }
+  .cm-s-google-interview-night span.cm-def { color: white; }
+  .cm-s-google-interview-night span.cm-bracket { color: white; }
+  .cm-s-google-interview-night span.cm-tag { color: white; }
+  .cm-s-google-interview-night span.cm-link { color: white; }
+  .cm-s-google-interview-night span.cm-error { background: #db2d20; color: white; }
+  
+  .cm-s-google-interview-night .CodeMirror-activeline-background { background: #2F2F2F; }
+  .cm-s-google-interview-night .CodeMirror-matchingbracket { text-decoration: underline; color: white !important; }
 `;
 var _3024_day = `/*
 
@@ -3746,6 +3786,7 @@ var zenburn = `/**
 
 var styles = {
     "cm-s-google-interview-day": google_interview_day,
+    "cm-s-google-interview-night": google_interview_night,
     "cm-s-3024-day": _3024_day,
     "cm-s-3024-night": _3024_night,
     "cm-s-abbott": abbott,

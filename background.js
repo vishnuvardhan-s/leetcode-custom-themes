@@ -1,15 +1,10 @@
 importScripts("./styles.js");
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (tab.url.startsWith("https://leetcode.com")) {
-    chrome.scripting.executeScript(
-      {
-        target: { tabId },
-        files: ["script.js"],
-      },
-      () => {
-        console.log("Script callback");
-      }
-    );
+    chrome.scripting.executeScript({
+      target: { tabId },
+      files: ["script.js"],
+    });
   }
 });
 
@@ -30,16 +25,10 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 chrome.storage.onChanged.addListener((changes, namespace) => {
   chrome.tabs.query({ active: true, currentWindow: true }, ([tabId]) => {
     if (tabId.url.startsWith("https://leetcode.com")) {
-      chrome.scripting.executeScript(
-        {
-          target: { tabId: tabId.id },
-          files: ["script.js"],
-        },
-        () => {
-          console.log("Script callback");
-        }
-      );
+      chrome.scripting.executeScript({
+        target: { tabId: tabId.id },
+        files: ["script.js"],
+      });
     }
   });
 });
-

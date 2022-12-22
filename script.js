@@ -111,9 +111,7 @@ waitForElmXPath('//button[@icon="settings"]').then((element) => {
             if (mutation.type === "characterData") {
               // user has changed theme inside leetcode
               // respect user decision and make codeTheme to null
-              chrome.storage.sync.set({ codeTheme: null }, () => {
-                console.log("theme is set to null!");
-              });
+              chrome.storage.sync.set({ codeTheme: null });
             }
           });
         });

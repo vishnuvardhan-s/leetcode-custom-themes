@@ -20,5 +20,18 @@
     "service_worker": "background.js"
   },
   "permissions": ["storage", "scripting", "tabs"],
-  "host_permissions": ["https://leetcode.com/**"]
+  "host_permissions": ["https://leetcode.com/**"],
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["inject.js"],
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["monaco-themes.js", "content.js"],
+      "matches": ["https://leetcode.com/*"]
+    }
+  ]
 }

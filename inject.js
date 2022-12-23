@@ -5,5 +5,4 @@ function injectScript(filePath, tag) {
   script.setAttribute("src", filePath);
   node.appendChild(script);
 }
-injectScript(chrome.runtime.getURL("monaco-themes.js"), "body");
 injectScript(chrome.runtime.getURL("content.js"), "body");

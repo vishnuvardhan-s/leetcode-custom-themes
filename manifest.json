@@ -30,7 +30,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["monaco-themes.js", "content.js", "themes/*.json"],
+      "resources": ["content.js", "themes/*.json"],
       "matches": ["https://leetcode.com/*"]
     }
   ]

@@ -3,7 +3,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (tab.url.startsWith("https://leetcode.com")) {
     chrome.scripting.executeScript({
       target: { tabId },
-      files: ["script.js"],
+      files: ["script.js", "theme-service.js"],
     });
   }
 });

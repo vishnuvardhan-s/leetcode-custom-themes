@@ -1,27 +1,36 @@
-async function applyUserTheme() {
+function applyUserTheme() {
   if (typeof monaco !== "undefined") {
     const ogSaveTheme = monaco.editor.setTheme;
+
+    function setCustomTheme(event) {
+      if (
+        event.data.type &&
+        event.data.type === "LEETCODE_CUSTOM_THEMES_RESPONSE"
+      ) {
+        const theme = event.data.theme;
+        const themeName = event.data.themeName;
+        monaco.editor.defineTheme(themeName, theme);
+        ogSaveTheme(themeName);
+        monaco.editor.setTheme = ogSaveTheme;
+      }
+    }
+
     // hijack setTheme call from leetcode and apply custom theme
-    monaco.editor.setTheme = async () => {
+    monaco.editor.setTheme = () => {
       window.postMessage(
-        { type: "LEETCODE_CUSTOM_THEMES_REQUEST", theme: "Github Dark" },
+        {
+          type: "LEETCODE_CUSTOM_THEMES_REQUEST",
+          theme: "GitHub Dark",
+        },
         "*"
       );
-      window.addEventListener("message", (event) => {
-        if (
-          event.data.type &&
-          event.data.type === "LEETCODE_CUSTOM_THEMES_RESPONSE"
-        ) {
-          const theme = event.data.theme;
-          monaco.editor.defineTheme("github-dark", theme);
-          ogSaveTheme("github-dark");
-          monaco.editor.setTheme = ogSaveTheme;
-        }
-      });
+      window.addEventListener("message", setCustomTheme);
     };
   } else {
     setTimeout(applyUserTheme, 250);
   }
 }
 
-applyUserTheme();
+window.addEventListener("load", () => {
+  applyUserTheme();
+});

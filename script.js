@@ -169,15 +169,3 @@ chrome.runtime.sendMessage({ page: "whatpage" }, (response) => {
     });
   }
 });
-
-window.addEventListener("message", async (event) => {
-  if (event.data.type && event.data.type === "LEETCODE_CUSTOM_THEMES_REQUEST") {
-    const url = chrome.runtime.getURL(`/themes/${event.data.theme}.json`);
-    const response = await fetch(url);
-    const theme = await response.json();
-    window.postMessage({
-      type: "LEETCODE_CUSTOM_THEMES_RESPONSE",
-      theme: theme,
-    });
-  }
-});

@@ -4,9 +4,7 @@ function format(codeTheme, isMonacoTheme) {
     return "No";
   }
   if (isMonacoTheme) {
-    const themeName = codeTheme
-      .split("-")
-      .map((item) => item[0].toUpperCase() + item.slice(1));
+    const themeName = codeTheme.split("-").map((item) => item[0].toUpperCase() + item.slice(1));
     return themeName.join(" ");
   }
   const list = codeTheme.split("-").slice(2);
@@ -35,10 +33,7 @@ function displayTheme(version) {
     });
   } else if (version === "new") {
     chrome.storage.sync.get("codeThemeMonaco", (response) => {
-      h4.innerHTML = `${format(
-        response.codeThemeMonaco,
-        true
-      )} theme is currently set!`;
+      h4.innerHTML = `${format(response.codeThemeMonaco, true)} theme is currently set!`;
     });
   } else if (version === "unknown") {
     h4.innerHTML = "Leetcode not yet loaded. You can change theme once loaded!";
@@ -59,13 +54,11 @@ function displayPage() {
       (res) => {
         const version = res[0].result;
         if (version === "new") {
-          document.getElementById("select-for-code-mirror").style.display =
-            "none";
+          document.getElementById("select-for-code-mirror").style.display = "none";
           document.getElementById("select-for-monaco").style.display = "block";
         } else if (version === "old") {
           document.getElementById("select-for-monaco").style.display = "none";
-          document.getElementById("select-for-code-mirror").style.display =
-            "block";
+          document.getElementById("select-for-code-mirror").style.display = "block";
         }
         displayTheme(version);
       }
@@ -73,16 +66,12 @@ function displayPage() {
   });
 }
 
-document
-  .getElementById("theme-monaco-specific")
-  .addEventListener("change", function () {
-    const selectedTheme = document.getElementById(
-      "theme-monaco-specific"
-    ).value;
-    chrome.storage.sync.set({ codeThemeMonaco: selectedTheme }, () => {
-      displayTheme("new");
-    });
+document.getElementById("theme-monaco-specific").addEventListener("change", function () {
+  const selectedTheme = document.getElementById("theme-monaco-specific").value;
+  chrome.storage.sync.set({ codeThemeMonaco: selectedTheme }, () => {
+    displayTheme("new");
   });
+});
 
 document.getElementById("theme").addEventListener("change", function () {
   const selectedTheme = document.getElementById("theme").value;

@@ -3,10 +3,7 @@ function applyUserTheme() {
     const ogSaveTheme = monaco.editor.setTheme;
 
     function setCustomTheme(event) {
-      if (
-        event.data.type &&
-        event.data.type === "LEETCODE_CUSTOM_THEMES_RESPONSE"
-      ) {
+      if (event.data.type && event.data.type === "LEETCODE_CUSTOM_THEMES_RESPONSE") {
         const theme = event.data.theme;
         const themeName = event.data.themeName;
         monaco.editor.defineTheme(themeName, theme);

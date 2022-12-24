@@ -11,45 +11,13 @@ function setCustomCSS(theme) {
 
 function waitForElmXPath(xPath) {
   return new Promise((resolve) => {
-    if (
-      document.evaluate(
-        xPath,
-        document,
-        null,
-        XPathResult.FIRST_ORDERED_NODE_TYPE,
-        null
-      ).singleNodeValue
-    ) {
-      return resolve(
-        document.evaluate(
-          xPath,
-          document,
-          null,
-          XPathResult.FIRST_ORDERED_NODE_TYPE,
-          null
-        ).singleNodeValue
-      );
+    if (document.evaluate(xPath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue) {
+      return resolve(document.evaluate(xPath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue);
     }
 
     const observer = new MutationObserver((mutations) => {
-      if (
-        document.evaluate(
-          xPath,
-          document,
-          null,
-          XPathResult.FIRST_ORDERED_NODE_TYPE,
-          null
-        ).singleNodeValue
-      ) {
-        resolve(
-          document.evaluate(
-            xPath,
-            document,
-            null,
-            XPathResult.FIRST_ORDERED_NODE_TYPE,
-            null
-          ).singleNodeValue
-        );
+      if (document.evaluate(xPath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue) {
+        resolve(document.evaluate(xPath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue);
         observer.disconnect();
       }
     });
@@ -82,17 +50,7 @@ function waitForElmQuery(selector) {
 }
 
 function constructXPath() {
-  const leetcodeThemes = [
-    "textmate",
-    "github",
-    "xcode",
-    "eclipse",
-    "monokai",
-    "blackboard",
-    "solarized light",
-    "solarized dark",
-    "tomorrow night",
-  ];
+  const leetcodeThemes = ["textmate", "github", "xcode", "eclipse", "monokai", "blackboard", "solarized light", "solarized dark", "tomorrow night"];
   let xPath = '//div[@class="ant-select-selection-selected-value" and (';
   for (let i = 0; i < leetcodeThemes.length - 1; i++) {
     xPath += `text()="${leetcodeThemes[i]}" or `;
@@ -126,23 +84,11 @@ waitForElmXPath('//button[@icon="settings"]').then((element) => {
 // this is the part where the code is dependent on leetcode page render
 chrome.runtime.sendMessage({ page: "whatpage" }, (response) => {
   const currPage = response.currPage;
-  const supportedPages = [
-    "problems",
-    "playground",
-    "assessment",
-    "contest",
-    "explore",
-  ];
+  const supportedPages = ["problems", "playground", "assessment", "contest", "explore"];
   if (supportedPages.indexOf(currPage) > -1) {
-    const className =
-      currPage === "problems" || currPage === "assessment"
-        ? ".react-codemirror2"
-        : ".ReactCodeMirror";
+    const className = currPage === "problems" || currPage === "assessment" ? ".react-codemirror2" : ".ReactCodeMirror";
     waitForElmQuery(className).then((element) => {
-      const child =
-        currPage === "problems" || currPage === "assessment"
-          ? element.children[0]
-          : element.children[1];
+      const child = currPage === "problems" || currPage === "assessment" ? element.children[0] : element.children[1];
       const array = [...child.classList];
       const theme = array.filter((classes) => classes.startsWith("cm-s-"));
       // default theme is set to textmate

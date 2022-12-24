@@ -1,6 +1,6 @@
 {
   "name": "Leetcode Custom Themes",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "manifest_version": 3,
   "description": "Allows you to change Leetcode Code Editor Themes",
   "icons": {
@@ -20,5 +20,18 @@
     "service_worker": "background.js"
   },
   "permissions": ["storage", "scripting", "tabs"],
-  "host_permissions": ["https://leetcode.com/**"]
+  "host_permissions": ["https://leetcode.com/**"],
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["inject.js"],
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["content.js", "themes/*.json"],
+      "matches": ["https://leetcode.com/*"]
+    }
+  ]
 }

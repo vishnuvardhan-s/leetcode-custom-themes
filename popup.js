@@ -36,7 +36,7 @@ function displayTheme(version) {
       h4.innerHTML = `${format(response.codeThemeMonaco, true)} theme is currently set!`;
     });
   } else if (version === "unknown") {
-    h4.innerHTML = "Leetcode not yet loaded. You can change theme once loaded!";
+    h4.innerHTML = "Leetcode not yet loaded. Please try again after loading";
     h4.style.color = "red";
     h4.style.textAlign = "center";
     document.getElementById("select-for-code-mirror").style.display = "none";

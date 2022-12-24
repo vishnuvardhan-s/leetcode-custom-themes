@@ -66,8 +66,21 @@ function displayPage() {
   });
 }
 
+function setMonacoTheme(theme) {
+  localStorage.setItem("LEETCODE_CUSTOM_THEME", theme);
+  window.postMessage({ type: "APPLY_LEETCODE_CUSTOM_THEME", theme: theme }, "*");
+}
+
 document.getElementById("theme-monaco-specific").addEventListener("change", function () {
   const selectedTheme = document.getElementById("theme-monaco-specific").value;
+  const themeName = format(selectedTheme, true);
+  chrome.tabs.query({ active: true, currentWindow: true }, ([tab]) => {
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      func: setMonacoTheme,
+      args: [themeName],
+    });
+  });
   chrome.storage.sync.set({ codeThemeMonaco: selectedTheme }, () => {
     displayTheme("new");
   });

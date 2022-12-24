@@ -11,9 +11,11 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.page === "whatpage") {
     chrome.tabs.query({ active: true, currentWindow: true }, ([tabId]) => {
-      const url = tabId.url;
-      const parts = url.split("/");
-      sendResponse({ currPage: parts[3] });
+      if (tabId) {
+        const url = tabId.url;
+        const parts = url.split("/");
+        sendResponse({ currPage: parts[3] });
+      }
     });
     return true; // sendResponse after tab query
   }
